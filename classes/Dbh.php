@@ -1,15 +1,12 @@
 <?php
 class Dbh{
-    private $host;
-    private $database;
-    private $username;
-    private $password;
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "zuriphp";
 
-    public function __construct()
+    protected function connect()
     {
-        
+        return new mysqli($this->host, $this->username, $this->password,$this->database);
     }
 }
-?>
-
-
