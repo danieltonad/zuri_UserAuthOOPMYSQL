@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item f-right">
-      <form action="php/action.php" method="POST" style=" background-color: inherit">
+      <form action="action.php" method="POST" style=" background-color: inherit">
         <button type="submit" name="logout" style="background-color: transparent; border: none">Logout</button>
      </form>
       </li>
