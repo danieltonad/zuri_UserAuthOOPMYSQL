@@ -24,8 +24,7 @@ class UserAuth extends Dbh
                 } else {
                     echo "Opps" . $conn->error;
                 }
-            }
-            else{
+            } else {
                 header("Location: forms/register.php?msg=Email%20Already%20Taken");
             }
         } else {
@@ -109,17 +108,12 @@ class UserAuth extends Dbh
     {
         $conn = $this->connect();
         $sql = "UPDATE Students SET `password` = '$password' WHERE `email` = '$email'";
-        if($this->checkIfEmailExist($email)){
+        if ($this->checkIfEmailExist($email)) {
             // query
-            $update = $conn->query($sql);
+            if ($conn->query($sql) === TRUE) header("Location: forms/login.php?msg=Password%20reset%20successfull");
+        } else {
+            header("Location: forms/resetpassword.php?msg=unable%20to%20reset%20password");
         }
-
-        var_dump($update);
-        // if ($update) {
-        //     header("Location: forms/login.php?msg=Password%20reset%20successfull");
-        // } else {
-        //     header("Location: forms/resetpassword.php?msg=unable%20to%20reset%20password");
-        // }
     }
 
     public function getUserByUsername($username)
