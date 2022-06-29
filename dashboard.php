@@ -39,7 +39,7 @@
     </h1>
     <br>
       <h2 style="align-content: center">
-        Here is a list of Students, their emails and Countries, Happey to Contact them?!
+        Here is a list of Students, their emails and Countries, Happy to Contact them?!
       </h2>
     </div>
 

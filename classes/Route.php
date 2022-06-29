@@ -41,8 +41,8 @@ class FormController extends UserAuth
                 break;
             case isset($_POST['delete']):
                 //unpack all data for deleting
-                $this->email = $_POST['email'];
-                $this->deleteUser($this->email);
+                $id = $_POST['id'];
+                $this->deleteUser($id);
                 break;
             case isset($_POST['reset']):
                 //unpack all data for updating password

@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
     <body>
-        <?php if(isset($_GET['message']) )
+        <?php if(isset($_GET['msg_']) )
         echo "<script> alert('Invalid Email Or Password')</script>";
         ?>
         <div class="all">
@@ -30,6 +30,12 @@
             <h1 class="form-group">Login</h1>
             <hr>
             <div class="form-row flex justify-content-center">
+            <?php if (isset($_GET['msg'])) : ?>
+                    <div class="form-row flex justify-content-center">
+                        <div class="form-group text-danger text-center p-3">
+                            <?php echo $_GET['msg'] ?>
+                        </div>
+                    <?php endif ?>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
